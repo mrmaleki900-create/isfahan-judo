@@ -1,0 +1,45 @@
+{
+  "name": "isfahan-judo-olympic",
+  "version": "1.0.0",
+  "description": "جودو المپیک اصفهان - برنامه مدیریت مسابقات جودو",
+  "main": "main.js",
+  "author": "جودو المپیک اصفهان",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^35.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "ir.isfahanjudo.olympic",
+    "productName": "جودو المپیک اصفهان",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "index.html",
+      "main.js",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "Judo-Olympic-Isfahan-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
